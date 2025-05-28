@@ -21,7 +21,7 @@ A simple and sleek Weather App built using **HTML**, **CSS**, and **JavaScript**
 ## 📸 video demo
 
 
-▶️ [Watch Demo Video ( https://drive.google.com/file/d/1WHh4CNPgYHgXEnwiF-RDP2wNcs0tCf1X/view?usp=drive_link )
+▶️ [Watch Demo Video ( https://drive.google.com/file/d/1WHh4CNPgYHgXEnwiF-RDP2wNcs0tCf1X/view?usp=sharing )
 
 ## 🛠️ Installation & Setup
 
