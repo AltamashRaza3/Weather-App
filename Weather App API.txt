@@ -1,0 +1,145 @@
+Explanation of HTML code:
+<html>: This is the root element of the HTML document.
+<head>: Contains meta-information about the document, such as its title and links to stylesheets.
+<meta charset="UTF-8">: Sets the character encoding to UTF-8.
+<meta name="viewport": Ensures the page is responsive by setting the viewport width to the device's width.
+<title>: Sets the title of the webpage as "Weather App".
+<link rel="stylesheet": Links the CSS file for styling the page.
+<body>: Contains the content of the HTML document.
+.container: A div that contains all the main elements of the app.
+.header: A div containing the search box.
+.searchbox: Contains an input field for entering the location and a button for searching.
+.location_not-found: A div to show an error message if the location is not found.
+.weather_body: A div that contains the weather information. It's initially hidden.
+.weather-image: An image representing the current weather.
+.weather-box: A div containing temperature and weather description.
+.weather-details: A div containing additional weather details like humidity and wind speed.
+.humidity: A div for displaying humidity.
+.wind: A div for displaying wind speed.
+<script src="https://kit.fontawesome.com/5d991dc4a4.js": Includes the Font Awesome icons.
+<script src="script.js"></script>: Links the JavaScript file for the app's functionality.
+
+Explanation of CSS Code:
+
+Universal selector (*):
+Applies the same styles to all elements.
+Margin and Padding: Set to 0 to remove default spacing.
+Box-sizing: Set to border-box to include padding and border in the element's total width and height.
+Border and Outline: Removed for a cleaner look.
+Font-family: Set to sans-serif for all elements.
+
+Body Styles:
+Min-height: Ensures the body takes at least the full height of the viewport.
+Display: Set to flex for flexible box layout.
+Justify-content and Align-items: Center the content both horizontally and vertically.
+Background-color: Dark background color (#121212).
+
+Container Style:
+Width: Fixed at 400px.
+Height: Adjusts to the content size (min-content).
+Background-color: Set to white.
+Border-radius: Rounded corners (12px).
+Padding: Space inside the container (28px).
+
+Search Box Styles:
+Height: Adjusts to the content size (min-content).
+Width: Full width of the container.
+Display: Flexbox for layout.
+Justify-content and Align-items: Space elements evenly and center them vertically.
+
+Input Button Styles:
+Width: Full width of the parent element.
+Font-size: Larger text size (20px).
+Text-transform: Capitalize each word.
+Background-color: Light yellow with opacity.
+Color: Black text color.
+Padding: Space inside the input (12px 16px).
+Border-radius: Rounded corners (14px).
+Placeholder color: Light slate gray.
+
+Search Button Styles:
+Width and Height: Square button (46px each).
+Background-color: Light yellow with opacity.
+Border-radius: Fully rounded (circle).
+Cursor: Pointer cursor on hover.
+Font-size: Larger text size (20px).
+Hover State: Changes text color to white and background to gray
+
+Weather Body Styles:
+Display: Initially hidden.
+Justify-content and Align-items: Center elements both horizontally and vertically.
+Flex-direction: Column layout.
+Margin-block: Vertical spacing (20px).
+
+
+Weather Image Styles:
+Width: 60% of the parent element's width.
+
+Weather Box Styles:
+Weather Box: Margin around the box (20px), centered text.
+Temperature: Large bold text (40px), relatively positioned.
+Temperature Superscript: Smaller text (25px), absolutely positioned, capitalized.
+
+Weather Details Styles:
+Weather Details: Full width, flexbox layout, spaced evenly, vertically centered, margin at the top (30px).
+Humidity and Wind: Flex layout, aligned vertically.
+Humidity: Left margin (20px).
+Wind: Right margin (20px).
+Weather Details Icons: Larger icons (36px).
+Text: Left margin (10px), smaller text (17px).
+Text Span: Larger, bold text (20px).
+
+Location Not Found Styles:
+ocation Not Found: Hidden initially, centered, column layout, top margin (20px).
+Image: Width (80% of the parent).
+Heading: Font size (20px), gray color (#6b6b6b), bottom margin (15px).
+
+
+
+Explanation of Java Script code:----
+
+Selecting DOM Elements:
+
+querySelector: This method is used to select elements from the DOM (Document Object Model) based on CSS selectors.
+inputBox: The input field where the user types the city name.
+searchButton: The button the user clicks to initiate the search.
+weather_img: The image element that will display an icon representing the weather condition.
+temperature: The element displaying the temperature.
+description: The element displaying the weather description.
+humidity: The element displaying the humidity level.
+wind_speed: The element displaying the wind speed.
+location_not_found: The element displaying a message if the location is not found.
+weather_body: The container for the weather information that will be shown or hidden based on whether valid weather data is available.
+
+Fetching and Displaying Weather Data:
+checkWeather: This asynchronous function fetches weather data for a given city.
+api_key: The API key for accessing the OpenWeatherMap API.
+url: The URL used to fetch the weather data, including the city name and API key.
+fetch: This function sends a request to the specified URL.
+await: Waits for the fetch operation to complete.
+then(response => response.json()): Processes the response and converts it to JSON.
+
+Error Handling for Invalid Location:
+weather_data.cod === "404": Checks if the response indicates the location was not found.
+location_not_found.style.display = "flex": Shows the "location not found" message.
+weather_body.style.display = "none": Hides the weather information.
+return: Exits the function if the location is not found
+
+Displaying Weather Information:
+location_not_found.style.display = "none": Hides the "location not found" message.
+weather_body.style.display = "flex": Shows the weather information.
+temperature.innerHTML: Sets the temperature text, converting from Kelvin to Celsius.
+description.innerHTML: Sets the weather description text.
+humidity.innerHTML: Sets the humidity text.
+wind_speed.innerHTML: Sets the wind speed text.
+
+Updating the Weather Image:
+switch(weather_data.weather[0].main): Updates the weather image based on the main weather condition.
+case "Clouds", case "Clear", case "Rain", case "Mist", case "Snow": Each case sets the image source to a corresponding weather icon.
+
+Adding Event Listener to the Search Button:
+searchButton.addEventListener("click", ...): Adds a click event listener to the search button.
+() => { checkWeather(inputBox.value) }: Calls the checkWeather function with the value entered in the input box when the button is clicked.
+
+Summary:-----
+When the user enters a city name and clicks the search button, it fetches weather data from the OpenWeatherMap API. If the city is found, it displays the weather information and an appropriate weather icon. If not, it shows a "location not found" message.
