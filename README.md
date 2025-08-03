@@ -2,7 +2,9 @@
 # 🌦️ Weather App
 
 A simple and sleek Weather App built using **HTML**, **CSS**, and **JavaScript**. This app fetches real-time weather data using the **OpenWeatherMap API** and displays essential weather information such as **Temperature**, **Humidity**, and **Wind Speed**.
+
 WeatherApp is live at https://altamashraza3.github.io/Weather-App/
+
 ## 🔍 Features
 
 - 🌡️ Live temperature display
